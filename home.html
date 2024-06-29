@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-NZ8DLfE3mMvG76p9BhB5v0Xj5RRMPv5sZJHM6S0vqf0F4TrGNO5n3v0iZ/Pb44VdcO5TnM3x3HnuBY9PnT1kKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    /* Resetting default styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Basic styling */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    .section {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .section:nth-child(even) {
+        background-color: #f9f9f9; /* Alternate background color */
+    }
+
+    .section:nth-child(odd) {
+        background-color: #fff; /* Alternate background color */
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        color: #fff;
+        padding: 10px 20px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #4CAF50; /* Green hover color */
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: #4CAF50;
+        cursor: pointer;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Content styling */
+    .content {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .section.in-view .content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .content h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    .content p {
+        font-size: 1.4rem;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: #4CAF50;
+    }
+
+    /* Animation styles */
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    .fadeInLeft {
+        animation-name: fadeInLeft;
+    }
+
+    .fadeInRight {
+        animation-name: fadeInRight;
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .content h2 {
+            font-size: 2.5rem;
+        }
+        .content p {
+            font-size: 1.2rem;
+        }
+        .icon {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#projects">Projects</a>
+        <a href="#more">More</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div id="profile" class="section" style="background-color: #4682B4;">
+    <div class="content animated fadeInLeft">
+        <h2><i class="icon fas fa-user"></i> Profile</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a nulla sed lorem egestas convallis. In hac habitasse platea dictumst. Proin convallis neque nec quam ultricies lobortis.</p>
+    </div>
+</div>
+
+<div id="projects" class="section" style="background-color: #4CAF50;">
+    <div class="content animated fadeInRight">
+        <h2><i class="icon fas fa-laptop-code"></i> Projects</h2>
+        <p>Fusce sollicitudin dolor eu sagittis pretium. Mauris rutrum justo et nunc consectetur, sit amet sodales elit lobortis.</p>
+    </div>
+</div>
+
+<div id="more" class="section" style="background-color: #FF6347;">
+    <div class="content animated fadeInLeft">
+        <h2><i class="icon fas fa-info-circle"></i> More</h2>
+        <p>Donec sed dui vehicula, dignissim libero nec, vestibulum lectus. Sed id libero ac ante malesuada convallis.</p>
+    </div>
+</div>
+
+<div id="contact" class="section" style="background-color: #4682B4;">
+    <div class="content animated fadeInRight">
+        <h2><i class="icon fas fa-envelope"></i> Contact</h2>
+        <p>Pellentesque lacinia velit ac quam venenatis, in iaculis urna facilisis. Etiam in lacinia enim. Praesent vel tincidunt nisl.</p>
+    </div>
+</div>
+
+<div class="scroll-down">
+    <a href="#projects"><i class="fas fa-angle-double-down"></i></a>
+</div>
+
+<script>
+    // Smooth scroll functionality
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer for animating content
+    const sections = document.querySelectorAll('.section');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // 50% of section is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
